@@ -92,7 +92,7 @@ int main(int argc, char *argv[]) {
 	QStringList arguments = app.arguments();
 	parser.process(arguments);
 	const QString initialUrl = parser.positionalArguments().isEmpty()
-								   ? QStringLiteral("https://www.qt.io")
+								   ? QStringLiteral("https://www.google.com")
 								   : parser.positionalArguments().first();
 
 	QQmlApplicationEngine engine;
