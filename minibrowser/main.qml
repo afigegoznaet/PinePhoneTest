@@ -145,15 +145,9 @@ ApplicationWindow {
             }
 
             Item { Layout.preferredWidth: 10 }
-            InputPanel {
-                id: inputPanel
-                y: Qt.inputMethod.visible ? parent.height - inputPanel.height : parent.height
-                anchors.left: parent.left
-                anchors.right: parent.right
-                //anchors.top: parent.top+inputPanel.height
-                //anchors.bottom: parent.bottom
-            }
+
         }
+
     }
 
     statusBar: StatusBar {
@@ -173,5 +167,14 @@ ApplicationWindow {
             if (loadRequest.errorString)
                 console.error(loadRequest.errorString);
         }
+
+    }
+    InputPanel {
+        id: inputPanel
+        y: Qt.inputMethod.visible ? parent.height - inputPanel.height : parent.height
+        anchors.left: parent.left
+        anchors.right: parent.right
+        //anchors.top: parent.top+inputPanel.height
+        //anchors.bottom: parent.bottom
     }
 }
