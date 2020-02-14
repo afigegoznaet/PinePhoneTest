@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=QT Minibrowser
+Comment=The minibrowser from QT examples, with Virtual Keyboard
+Type=Application
+Terminal=false
+Exec=minibrowser
+Categories=Network
