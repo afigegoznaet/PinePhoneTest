@@ -7,5 +7,6 @@ Type=Application
 Terminal=false
 Exec=minibrowser %u
 Categories=Qt;KDE;Network;WebBrowser;
-MimeType=text/html;
+MimeType=text/html
+Icon=minibrowser.png
 InitialPreference=9
