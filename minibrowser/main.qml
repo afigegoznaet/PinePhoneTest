@@ -128,7 +128,7 @@ ApplicationWindow {
                 id: urlField
                 inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhPreferLowercase
                 text: webView.url
-                onActiveFocusChanged: { delay(1000, function() {
+                onActiveFocusChanged: { delay(1, function() {
                     print("I am called one second after I was started.");
                     selectAll()
                 }); }
