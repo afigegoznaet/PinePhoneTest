@@ -55,6 +55,8 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.2
 import QtQuick.VirtualKeyboard 2.2
 
+
+
 ApplicationWindow {
     property bool showProgress: webView.loading
                                 && Qt.platform.os !== "ios"
@@ -110,11 +112,26 @@ ApplicationWindow {
             Item { Layout.preferredWidth: 5 }
 
             TextField {
+
+                Timer {
+                    id: timer
+                }
+
+                function delay(delayTime, cb) {
+                    timer.interval = delayTime;
+                    timer.repeat = false;
+                    timer.triggered.connect(cb);
+                    timer.start();
+                }
+
                 Layout.fillWidth: true
                 id: urlField
                 inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhPreferLowercase
                 text: webView.url
-                onActiveFocusOnPressChanged: { selectAll()}
+                onActiveFocusChanged: { delay(1000, function() {
+                    print("I am called one second after I was started.");
+                    selectAll()
+                }); }
                 onAccepted: webView.url = utils.fromUserInput(text)
 
                 ProgressBar {
