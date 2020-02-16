@@ -114,7 +114,7 @@ ApplicationWindow {
                 id: urlField
                 inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhPreferLowercase
                 text: webView.url
-                onActiveFocusChanged: { if(focus)  selectAll() }
+                onActiveFocusChanged: {  selectAll() }
                 onAccepted: webView.url = utils.fromUserInput(text)
 
                 ProgressBar {
